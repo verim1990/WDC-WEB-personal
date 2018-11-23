@@ -1,0 +1,18 @@
+div(class="header")
+    span {{ 'ABOUT' | translate }}
+div(ng-controller="aboutController" class="content")
+    div(class="section") 
+        span {{ 'ABOUT_SECTION_1' | translate | tokenReplace:'!#age#!':ctrl.getAge(1990) }} 
+        span {{ 'ABOUT_SECTION_2' | translate }}
+    div(class="section") 
+        span {{ 'ABOUT_SECTION_3' | translate }} 
+        span {{ 'ABOUT_SECTION_4' | translate }}
+    div(class="section")
+        span {{ 'ABOUT_SECTION_DOWNLOADCV_TITLE' | translate }}
+        div(class="media-list")
+            div(class="media-row")
+                div(class="icon cv-icon")
+                a(id="download-cv-polish" href="assets/cvs/CV_PL.pdf" target="blank") {{ 'ABOUT_SECTION_DOWNLOADCV_POLISH' | translate }}
+            div(class="media-row")
+                div(class="icon cv-icon")
+                a(id="download-cv-english" href="assets/cvs/CV_EN.pdf" target="blank") {{ 'ABOUT_SECTION_DOWNLOADCV_ENGLISH' | translate }}

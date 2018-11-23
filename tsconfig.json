@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "rootDir": "./client",
+        "module": "commonjs",
+        "outDir": ".tmp",
+        "removeComments": false,
+        "target": "ES5",
+        "lib": ["es2017", "dom"],
+        "types": [
+            "angular", "angular-mocks", "angular-route", "angular-resource", "angular-translate",
+            "core-js",
+            "jquery", "jqueryui",
+            "lodash",  
+            "node",
+            "velocity-animate"
+         ],
+         "typeRoots": [
+            "node_modules/@types"
+        ]
+    },
+    "exclude": [
+      "node_modules"
+    ],
+    "filesGlob": [
+        "client/{app,components}/**/!(*.spec).ts"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+      "resolveGlobs": true,
+      "forkChecker": true
+    }
+}

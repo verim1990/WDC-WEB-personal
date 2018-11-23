@@ -1,0 +1,139 @@
+skill-box {
+    position: absolute;
+    text-shadow:0px 0px 2px $textShadowFirstColor;
+    
+    .skill-box-wrapper {
+        height: 100%;
+        width: 100%;
+        
+        .skill-box-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            outline: 1px solid transparent;
+            background: $firstColor;
+            box-shadow: 0px 0px 4px $firstColor;
+        }
+    
+        .skill-box-content {
+            position: absolute;
+            color: $secondColor;
+            width: 100%;
+            height: 100%;
+    
+            .skill-box-header {
+                text-align: center;
+                height: 16px;
+            }
+    
+            .skill-box-image {
+                display: block;
+                width: calc(100% - 34px);
+                height: calc(100% - 34px);
+                margin: auto;
+                
+                .skill-box-background {
+                    width: 100%;
+                    height: 100%;
+                    background: no-repeat scroll;
+                    background-position: center;
+                    background-size: 400% 400%;
+                    background-image: url('../assets/images/skills.png');
+                    background-repeat: no-repeat;
+
+                    &.angular {
+                        background-position: 0% 0%;
+                    }
+                    
+                    &.csharp {
+                        background-position: 33% 0%;
+                    }
+                    
+                    &.docker {
+                        background-position: 66% 0%;
+                    }
+
+                    &.dotnetcore {
+                        background-position: 100% 0%;
+                    }
+                    
+                    &.es {
+                        background-position: 0% 33%;
+                    }
+                    
+                    &.git {
+                        background-position: 33% 33%;
+                    }
+                    
+                    &.jenkins {
+                        background-position: 66% 33%;
+                    }
+                    
+                    &.js {
+                        background-position: 100% 33%;
+                    }
+
+                    &.mongo {
+                        background-position: 0% 66%;
+                    }
+                    
+                    &.node {
+                        background-position: 33% 66%;
+                    }
+                    
+                    &.react {
+                        background-position: 66% 66%;
+                    }
+                    
+                    &.resharper {
+                        background-position: 100% 66%;
+                    }
+                    
+                    &.sql {
+                        background-position: 0% 100%;
+                    }
+                    
+                    &.ts {
+                        background-position: 33% 100% ;
+                    }
+                    
+                    &.vs {
+                        background-position: 66% 100%;
+                    }
+                    
+                    &.webpack {
+                        background-position: 100% 100%;
+                    }
+                }
+            }
+    
+            .skill-box-rate {
+                text-align: center;
+                height: 17px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:$break-width){
+    skill-box {
+        .skill-box-wrapper {
+            .skill-box-content {
+                font-size: 13px;
+    
+                .skill-box-header {
+                    height: 16px;
+                }
+    
+                .skill-box-image {
+                    width: calc(100% - 30px) !important;
+                    height: calc(100% - 30px) !important;
+                }
+    
+                .skill-box-rate {
+                    height: 13px;
+                }
+            }
+        }
+    }
+}

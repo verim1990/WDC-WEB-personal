@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Wojciech Dudek</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <style>
+      html {
+        background-color: black;
+        font-family: 'PT Sans Narrow', Arial, sans-serif !important;
+      }
+      body {
+        font-size: 15px;
+        margin:0;
+        overflow: hidden;
+      }
+      .app {
+        visibility: hidden;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+      <!--[if lt IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+      </script>
+
+      <div ng-app="app" class="app">
+        <div id="background">
+          <div class="background-overlay"></div>
+          <video autoplay="true" loop="true" ng-init="pc=true; muted=false;" play="pc" muted="muted" video-control>
+            <source src="assets/videos/background.mp4" type="video/mp4"/>
+          </video>
+        </div>
+        <div id="messages" ng-controller="messageController">
+          <div uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" ng-class="'alert-' + alert.type" close="ctrl.closeAlert($index)">
+            {{alert.message}}
+          </div>
+        </div>
+        <div id="navigation">
+          <ul class="navigation-player">
+            <li>
+              <a class="ui-icon" ng-class="{'ui-icon-volume-off': !muted, 'ui-icon-volume-on': muted }" ng-click="muted = !muted;"></a>
+            </li>
+            <li>
+              <a class="ui-icon" ng-class="{'ui-icon-play': !pc, 'ui-icon-pause': pc }" ng-click="pc = !pc;"></a>
+            </li>
+          </ul>
+          <ul class="navigation-languages" ng-controller="languageController">
+            <li>
+              <a class="country-icon polish" ng-class="{'current': currentLanguage == 'pl'}" ng-click="ctrl.changeLanguage('pl')"></a>
+            </li>
+            <li>
+              <a class="country-icon english" ng-class="{'current': currentLanguage == 'en'}" ng-click="ctrl.changeLanguage('en')"></a>
+            </li>
+          </ul>
+        </div>
+        <div id="container-wrapper">
+            <div id="container">
+                <preloadable-view class="animate" location="location"></preloadable-view>
+              </div>
+        </div>
+        <div id="menu-wrapper">
+            <div id="menu"><!--
+            --><a ng-href="#!/techstack" ng-class="{'selected': location == 'techstack'}">{{ 'TECHSTACK' | translate }}</a><!--
+            --><a ng-href="#!/about" ng-class="{'selected': location == 'about'}">{{ 'ABOUT' | translate }}</a><!--
+            --><a ng-href="#!/contact"  ng-class="{'selected': location == 'contact'}"> {{ 'CONTACT' | translate }} </a><!--
+            --><a ng-href="#!/media"  ng-class="{'selected': location == 'media'}"> {{ 'MEDIA' | translate }} </a><!--
+          --></div>
+        </div>
+      </div>
+  </body>
+</html>

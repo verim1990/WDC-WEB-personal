@@ -1,0 +1,24 @@
+skill-matrix {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+
+    .skill-box-template {
+        visibility: hidden;
+        height: 80px;
+        width: 80px;
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width:$break-width){
+    skill-matrix {
+        .skill-box-template {
+            height: 65px;
+            width: 65px;
+            font-size: 10px;
+        }
+    }
+}

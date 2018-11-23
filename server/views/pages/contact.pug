@@ -1,0 +1,22 @@
+div(class="header")
+    span {{ 'CONTACT' | translate }}
+div(ng-controller="contactController" class="content")
+    div(class="section")
+        div Contact form soon!
+    div(class="section")
+        input(type="button" ng-click="ctrl.send('Contact form soon!')" value="{{ 'CONTACT_FORM_SEND' | translate }}")
+    div(class="section")
+        span {{ 'CONTACT_CATCHME' | translate }}
+        div(class="media-list")
+            div(class="media-row")
+                div(class="icon email-icon social-icon")
+                a(href="mailto:kontakt@wojciechdudek.pl" target="blank") kontakt@wojciechdudek.pl
+            div(class="media-row")
+                div(class="icon facebook-icon social-icon")
+                a(href="https://www.facebook.com/verim1990" target="blank") www.facebook.com/verim1990
+            div(class="media-row")
+                div(class="icon linkedin-icon social-icon")
+                a(href="https://www.linkedin.com/in/dudekwojciech" target="blank") www.linkedin.com/in/dudekwojciech
+            div(class="media-row")
+                div(class="icon skype-icon social-icon")
+                a(href="skype:wojciechdudek.gliwice?call" target="blank") wojciechdudek.gliwice

@@ -1,0 +1,21 @@
+FROM node:6
+
+# Go to app
+WORKDIR /app
+
+# Update NPM and install required dependencies
+RUN npm update
+RUN npm install node-pre-gyp --build-from-source -g
+RUN npm install node-gyp@3.6.2 node-sass node-inspector@0.12.10 gulp -g
+
+# Prepare package.json
+COPY package.json /app
+
+# Install all dependencies
+RUN npm install && npm cache clean
+
+# Copy app
+COPY . /app 
+
+# Start app
+CMD ["npm","run-script","start"]
