@@ -9,7 +9,7 @@ const techstackConfig = [
     new Skill('Typescript', 'Typescript', 'ts', 5, [SkillCategory.Client]),
     new Skill('Visual Studio', 'Visual Studio', 'vs', 4, [SkillCategory.Server, SkillCategory.Software]),
     new Skill('SQL', 'SQL', 'sql', 4, [SkillCategory.Server, SkillCategory.Database]),
-    new Skill('Docker', 'Docker', 'docker', 3, [SkillCategory.Software]),
+    new Skill('Docker', 'Docker', 'docker', 4, [SkillCategory.Software]),
     new Skill('Mongo', 'Mongo', 'mongo', 3, [SkillCategory.Server, SkillCategory.Database]),
     new Skill('Resharper', 'Resharper', 'resharper', 3, [SkillCategory.Software]),
     new Skill('JavaScript', 'Javascript', 'js', 5, [SkillCategory.Client]),
