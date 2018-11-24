@@ -1,14 +1,20 @@
-DOCKER_REGISTRY = https://registry-back.wojciechdudek.pl
-DOCKER_TAG = wdc-web-personal/wdc-web-personal:$(DOCKER_REVISION)
+REVISION = $(DOCKER_REVISION)
+TAG = $(DOCKER_REGISTRY)/$(DOCKER_IMAGE):$(DOCKER_REVISION)
 
-clean:
-	@echo "Clean"
+init:
+	@if docker images $(TAG) | awk '{ print $$2 }' | grep -q -F $(REVISION); then docker rmi $(TAG); fi
 	
 build-image:
-	docker build -t $(DOCKER_FULL_PATH) .
+	docker build --rm -t $(TAG) .
 		
 push-image:
-	docker push $(DOCKER_FULL_PATH)
+	docker push $(TAG)
+	
+run-image:
+	@echo "Run"
 	
 test:
 	@echo "Test"
+	
+clean:
+	docker rmi $(TAG)
